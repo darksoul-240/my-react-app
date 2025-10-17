@@ -1,9 +1,9 @@
 :root{
-  --bg: #0f172a;
-  --card: #0b1220;
-  --accent: #7c5cff;
-  --text: #e6eef8;
-  --muted: #98a0b3;
+  --page-bg: #f2f6fb;
+  --card-bg: #ffffff;
+  --accent: #2b78ff;
+  --muted: #707b88;
+  --text: #0f1724;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -13,34 +13,76 @@
   display:flex;
   align-items:center;
   justify-content:center;
-  background: linear-gradient(180deg, rgba(12,17,35,1) 0%, rgba(8,12,22,1) 100%);
-  color:var(--text);
+  background: var(--page-bg);
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  padding:24px;
+  padding:40px 20px;
 }
 
 .card{
-  background: linear-gradient(180deg, rgba(11,17,32,0.9), rgba(7,10,18,0.85));
-  border: 1px solid rgba(255,255,255,0.04);
-  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-  padding:32px;
-  border-radius:12px;
-  text-align:center;
+  background: var(--card-bg);
   width:100%;
-  max-width:520px;
+  max-width:720px;
+  padding:56px 40px 40px;
+  border-radius:16px;
+  box-shadow: 0 12px 40px rgba(22,28,45,0.08);
+  text-align:center;
+  position:relative;
 }
 
 .title{
-  font-size:2rem;
-  margin-bottom:8px;
-  letter-spacing:-0.02em;
+  font-size:2.2rem;
   color:var(--text);
+  margin:8px 0 18px;
+  font-weight:800;
+  letter-spacing:-0.02em;
 }
 
-.subtitle{
+/* stacked area that holds the component pills */
+.stack{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  align-items:center;
+  margin-top:6px;
+}
+
+/* generic pill style used by child components */
+.pill{
+  min-width:260px;
+  max-width:520px;
+  width:70%;
+  background:#f3f5f7;
+  color:var(--text);
+  padding:16px 18px;
+  border-radius:10px;
+  box-shadow: 0 8px 20px rgba(18,22,30,0.04);
+  font-weight:700;
+  border: none;
+  cursor: default;
+  text-align:center;
+}
+
+/* a slightly darker neutral pill */
+.pill.secondary{
+  background:#eceff3;
   color:var(--muted);
-  margin-bottom:20px;
-  font-size:1rem;
+  font-weight:600;
+}
+
+/* dark footer pill */
+.pill.dark{
+  background:#111217;
+  color:white;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.12);
+}
+
+/* small helper for the small timestamp text under main label */
+.pill .muted {
+  display:block;
+  margin-top:6px;
+  font-size:0.9rem;
+  color:var(--muted);
+  font-weight:500;
 }
 
 .cta{
@@ -52,7 +94,18 @@
   cursor:pointer;
   font-weight:600;
   transition: transform .12s ease, box-shadow .12s ease;
+  margin-top:8px;
 }
 
 .cta:hover{ transform: translateY(-3px); box-shadow: 0 8px 20px rgba(124,92,255,0.18) }
 .cta:active{ transform: translateY(-1px) }
+
+/* spacing for Timestamp and Bumpups now handled by .card gap */
+/* new small layout tweaks */
+.controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-top:12px;
+}

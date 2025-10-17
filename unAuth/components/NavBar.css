@@ -1,0 +1,12 @@
+.nav-pill{
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:10px;
+  background: linear-gradient(90deg,#2b78ff,#5ec3ff);
+  color:white;
+  font-weight:700;
+  font-size:0.9rem;
+  box-shadow: 0 6px 18px rgba(43,120,255,0.22);
+  margin-top:-26px; /* pull into card top */
+  margin-bottom:12px;
+}
